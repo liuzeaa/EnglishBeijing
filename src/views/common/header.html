@@ -11,7 +11,7 @@
             <ul>
                 <li><a href="../purchase/index.html">物资设备采购</a></li>
                 <li><a href="../communication/index.html">统一通信平台</a></li>
-                <li><a href="">设备材料管理</a></li>
+                <li><a href="../equipment/index.html">设备材料管理</a></li>
             </ul>
         </nav>
     </div>
@@ -29,6 +29,10 @@
             if(herf.indexOf('communication')>-1){
                 $('nav ul li:eq(1)').addClass('selected');
                 $('.subTitle').html('统一通信平台');
+            }
+            if(herf.indexOf('equipment')>-1){
+                $('nav ul li:eq(2)').addClass('selected');
+                $('.subTitle').html('设备材料管理');
             }
         }
     </script>
