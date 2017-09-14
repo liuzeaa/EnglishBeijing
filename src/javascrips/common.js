@@ -19,11 +19,10 @@ function leftMenu(){
         if ($next.is(':hidden')) {
             $(this).addClass('selected');
             $next.stop().slideDown();
+            firstA = $next.children('a').eq(0).trigger('click');
             if ($(this).parent('li').siblings().children('div').is(':visible')) {
-                debugger;
                 $(this).parent('li').siblings().children('span').removeClass('selected');
                 $(this).parent('li').siblings().children('div').stop().slideUp();
-                $(this).parent('li').siblings().find('a').removeClass('selected');
             }
         } else {
             $(this).removeClass('selected');
