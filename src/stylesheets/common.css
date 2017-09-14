@@ -32,7 +32,7 @@ nav ul li.selected,nav ul li:hover{
 }
 
 #main{
-    padding:5px 0px 5px 5px;position: relative;margin-top: 100px;
+    padding:5px;position: relative;margin-top: 100px;
 }
 .left{
     width:180px;position:fixed;left:5px;top:105px;overflow: auto;
