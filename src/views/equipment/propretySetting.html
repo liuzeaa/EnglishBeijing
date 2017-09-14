@@ -13,7 +13,7 @@
     </style>
 </head>
 <body>
-<div>
+<div >
     <div class="layui-tab layui-tab-card">
         <ul class="layui-tab-title">
             <li class="layui-this">设备信息管理</li>
@@ -58,52 +58,52 @@
                         <tbody>
                         <tr>
                             <td>1</td>
-                            <td><a class="default" href="">颜色 </a></td>
-                            <td><a class="default" href="">家具</a></td>
+                            <td><a class="default" >颜色 </a></td>
+                            <td><a class="default" >家具</a></td>
                             <td>10</td>
                             <td>
-                                <a href="" class="default">修改</a>
-                                <a href="" class="default">删除</a>
+                                <a href="javascript:;" class="default edit">修改</a>
+                                <a href="javascript:;" class="default">删除</a>
                             </td>
                         </tr>
                         <tr>
                             <td>2</td>
-                            <td><a class="default" href="">材质 </a></td>
-                            <td><a class="default" href="">家具</a></td>
+                            <td><a class="default" >材质 </a></td>
+                            <td><a class="default" >家具</a></td>
                             <td>20</td>
                             <td>
-                                <a href="" class="default">修改</a>
-                                <a href="" class="default">删除</a>
+                                <a href="javascript:;" class="default edit">修改</a>
+                                <a href="javascript:;" class="default">删除</a>
                             </td>
                         </tr>
                         <tr>
                             <td>leave</td>
-                            <td><a class="default" href="">原产地 </a></td>
-                            <td><a class="default" href="">家具</a></td>
+                            <td><a class="default" >原产地 </a></td>
+                            <td><a class="default" >家具</a></td>
                             <td>10</td>
                             <td>
-                                <a href="" class="default">修改</a>
-                                <a href="" class="default">删除</a>
+                                <a href="javascript:;" class="default edit">修改</a>
+                                <a href="javascript:;" class="default">删除</a>
                             </td>
                         </tr>
                         <tr>
                             <td>test_aduit</td>
-                            <td><a class="default" href="">重量 </a></td>
-                            <td><a class="default" href="">大型设备</a></td>
+                            <td><a class="default" >重量 </a></td>
+                            <td><a class="default">大型设备</a></td>
                             <td>20</td>
                             <td>
-                                <a href="" class="default">修改</a>
-                                <a href="" class="default">删除</a>
+                                <a href="javascript:;" class="default edit">修改</a>
+                                <a href="javascript:;" class="default">删除</a>
                             </td>
                         </tr>
                         <tr>
                             <td>0</td>
-                            <td><a class="default" href="">尺寸 </a></td>
-                            <td><a class="default" href="">大型设备</a></td>
+                            <td><a class="default" >尺寸 </a></td>
+                            <td><a class="default" >大型设备</a></td>
                             <td>10</td>
                             <td>
-                                <a href="" class="default">修改</a>
-                                <a href="" class="default">删除</a>
+                                <a href="javascript:;" class="default edit">修改</a>
+                                <a href="javascript:;" class="default">删除</a>
                             </td>
                         </tr>
                         </tbody>
@@ -162,6 +162,16 @@
             elem: '#date'
         });
     });
+    $('.edit').on('click',function(){
+        layer.open({
+            type: 2,
+            title: '编辑设备属性',
+            shadeClose: true,
+            shade: 0.6,
+            area: ['700px', '80%'],
+            content: 'addProprety.html' //iframe的url
+        });
+    })
 </script>
 </body>
 </html>

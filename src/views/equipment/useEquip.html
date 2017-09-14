@@ -17,7 +17,7 @@
     <div class="layui-tab layui-tab-card">
         <ul class="layui-tab-title">
             <li class="layui-this">设备信息管理</li>
-            <li>设备出库</li>
+            <li>设备出库添加</li>
         </ul>
         <div class="layui-tab-content">
             <div class="layui-tab-item layui-show">
@@ -62,7 +62,7 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <td><a class="default" href="">2016061400004</a></td>
+                            <td><a class="default" >2016061400004</a></td>
                             <td>多媒体投影仪</td>
                             <td>ND342DS</td>
                             <td>1985-02-08</td>
@@ -72,12 +72,12 @@
                             <td></td>
                             <td>合格</td>
                             <td>
-                                <a href="" class="default">修改</a>
-                                <a href="" class="default">删除</a>
+                                <a href="javascript:;" class="default edit">修改</a>
+                                <a href="javascript:;" class="default">删除</a>
                             </td>
                         </tr>
                         <tr>
-                            <td><a class="default" href="">2016042102</a></td>
+                            <td><a class="default" >2016042102</a></td>
                             <td>惠普打印机</td>
                             <td>XSER570</td>
                             <td>2016-06-01</td>
@@ -87,12 +87,12 @@
                             <td></td>
                             <td>合格</td>
                             <td>
-                                <a href="" class="default">修改</a>
-                                <a href="" class="default">删除</a>
+                                <a href="javascript:;" class="default edit">修改</a>
+                                <a href="javascript:;" class="default">删除</a>
                             </td>
                         </tr>
                         <tr>
-                            <td><a class="default" href="">2016061400004</a></td>
+                            <td><a class="default">2016061400004</a></td>
                             <td>多媒体投影仪</td>
                             <td>ND342DS</td>
                             <td>1985-02-08</td>
@@ -102,12 +102,12 @@
                             <td></td>
                             <td>合格</td>
                             <td>
-                                <a href="" class="default">修改</a>
-                                <a href="" class="default">删除</a>
+                                <a href="javascript:;" class="default edit">修改</a>
+                                <a href="javascript:;" class="default">删除</a>
                             </td>
                         </tr>
                         <tr>
-                            <td><a class="default" href="">2016061400004</a></td>
+                            <td><a class="default" >2016061400004</a></td>
                             <td>多媒体投影仪</td>
                             <td>ND342DS</td>
                             <td>1985-02-08</td>
@@ -117,12 +117,12 @@
                             <td></td>
                             <td>转移</td>
                             <td>
-                                <a href="" class="default">修改</a>
-                                <a href="" class="default">删除</a>
+                                <a href="javascript:;" class="default edit">修改</a>
+                                <a href="javascript:;" class="default">删除</a>
                             </td>
                         </tr>
                         <tr>
-                            <td><a class="default" href="">2016061400004</a></td>
+                            <td><a class="default" >2016061400004</a></td>
                             <td>多媒体投影仪</td>
                             <td>ND342DS</td>
                             <td>1985-02-08</td>
@@ -132,12 +132,12 @@
                             <td></td>
                             <td>归还</td>
                             <td>
-                                <a href="" class="default">修改</a>
-                                <a href="" class="default">删除</a>
+                                <a href="javascript:;" class="default edit">修改</a>
+                                <a href="javascript:;" class="default">删除</a>
                             </td>
                         </tr>
                         <tr>
-                            <td><a class="default" href="">2016061400004</a></td>
+                            <td><a class="default" >2016061400004</a></td>
                             <td>多媒体投影仪</td>
                             <td>ND342DS</td>
                             <td>1985-02-08</td>
@@ -147,12 +147,12 @@
                             <td></td>
                             <td>借用</td>
                             <td>
-                                <a href="" class="default">修改</a>
-                                <a href="" class="default">删除</a>
+                                <a href="javascript:;" class="default edit">修改</a>
+                                <a href="javascript:;" class="default">删除</a>
                             </td>
                         </tr>
                         <tr>
-                            <td><a class="default" href="">2016061400004</a></td>
+                            <td><a class="default" >2016061400004</a></td>
                             <td>多媒体投影仪</td>
                             <td>ND342DS</td>
                             <td>1985-02-08</td>
@@ -162,12 +162,12 @@
                             <td></td>
                             <td>保修</td>
                             <td>
-                                <a href="" class="default">修改</a>
-                                <a href="" class="default">删除</a>
+                                <a href="javascript:;" class="default edit">修改</a>
+                                <a href="javascript:;" class="default">删除</a>
                             </td>
                         </tr>
                         <tr>
-                            <td><a class="default" href="">2016061400004</a></td>
+                            <td><a class="default" >2016061400004</a></td>
                             <td>多媒体投影仪</td>
                             <td>ND342DS</td>
                             <td>1985-02-08</td>
@@ -177,8 +177,8 @@
                             <td></td>
                             <td>合格</td>
                             <td>
-                                <a href="" class="default">修改</a>
-                                <a href="" class="default">删除</a>
+                                <a href="javascript:;" class="default edit">修改</a>
+                                <a href="javascript:;" class="default">删除</a>
                             </td>
                         </tr>
                         </tbody>
@@ -280,6 +280,16 @@
             elem: '#date'
         });
     });
+    $('.edit').on('click',function(){
+        layer.open({
+            type: 2,
+            title: '编辑领用出库',
+            shadeClose: true,
+            shade: 0.6,
+            area: ['700px', '80%'],
+            content: 'editModel.html' //iframe的url
+        });
+    })
 </script>
 </body>
 </html>
