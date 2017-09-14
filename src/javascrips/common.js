@@ -19,7 +19,7 @@ function leftMenu(){
         if ($next.is(':hidden')) {
             $(this).addClass('selected');
             $next.stop().slideDown();
-            firstA = $next.children('a').eq(0).trigger('click');
+            $next.children('a').eq(0).trigger('click');
             if ($(this).parent('li').siblings().children('div').is(':visible')) {
                 $(this).parent('li').siblings().children('span').removeClass('selected');
                 $(this).parent('li').siblings().children('div').stop().slideUp();
