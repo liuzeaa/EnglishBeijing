@@ -14,13 +14,22 @@ $(function(){
 })
 
 function leftMenu(){
-    $('.left ul li span').click(function(){
-        $('.left ul li span').removeClass('selected');
-        $(this).addClass('selected');
-        $('.left ul li div').slideUp();
-        var $next =  $(this).next('div');
-        $next.stop().slideDown();
-    })
+    $('.left').find('li:has(div)').children('span').click(function () {
+        var $next = $(this).next('div');
+        if ($next.is(':hidden')) {
+            $(this).addClass('selected');
+            $next.stop().slideDown();
+            if ($(this).parent('li').siblings().children('div').is(':visible')) {
+                debugger;
+                $(this).parent('li').siblings().children('span').removeClass('selected');
+                $(this).parent('li').siblings().children('div').stop().slideUp();
+                $(this).parent('li').siblings().find('a').removeClass('selected');
+            }
+        } else {
+            $(this).removeClass('selected');
+            $next.stop().slideUp();
+        }
+    });
 }
 function reSize() {
     $('.left').height($(window).height() - 105 + 'px');
