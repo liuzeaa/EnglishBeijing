@@ -16,7 +16,7 @@
 <div>
     <div class="layui-tab layui-tab-card">
         <ul class="layui-tab-title">
-            <li class="layui-this" id="title">群组邮件群发</li>
+            <li class="layui-this" id="title">群组消息群发</li>
         </ul>
         <div class="layui-tab-content">
             <div class="layui-tab-item layui-show">
@@ -34,15 +34,46 @@
                         </div>
                     </div>
                     <div class="layui-form-item layui-form-text">
-                        <label class="layui-form-label">已选用户:</label>
-                        <div class="layui-input-block" style="margin-left: 128px;">
-                            <textarea placeholder="" class="layui-textarea" ></textarea>
+                        <label class="layui-form-label">已选群组:</label>
+                        <div class="layui-input-block" style="margin-left: 128px;border:1px solid #ccc;padding:0px 10px;">
+                            <input type="checkbox" name="like1[write]" lay-skin="primary" title="群组1" checked="">
+                            <input type="checkbox" name="like1[read]" lay-skin="primary" title="群组" checked="">
+                            <input type="checkbox" name="like1[game]" lay-skin="primary" title="群组3" disabled="">
+                            <input type="checkbox" name="like1[write]" lay-skin="primary" title="群组4" checked="">
+                            <input type="checkbox" name="like1[read]" lay-skin="primary" title="群组5" checked="">
                         </div>
                     </div>
                     <div class="layui-form-item layui-form-text">
-                        <label class="layui-form-label">可选用户:</label>
+                        <label class="layui-form-label">未选群组:</label>
+                        <div class="layui-input-block" style="margin-left: 128px;border:1px solid #ccc;padding:0px 10px;">
+                            <input type="checkbox" name="like1[write]" lay-skin="primary" title="群组6" >
+                            <input type="checkbox" name="like1[read]" lay-skin="primary" title="群组7">
+                            <input type="checkbox" name="like1[game]" lay-skin="primary" title="群组8" >
+                            <input type="checkbox" name="like1[write]" lay-skin="primary" title="群组9" >
+                            <input type="checkbox" name="like1[read]" lay-skin="primary" title="群组10">
+                            <input type="checkbox" name="like1[game]" lay-skin="primary" title="群组11" >
+                            <input type="checkbox" name="like1[write]" lay-skin="primary" title="群组12" >
+                            <input type="checkbox" name="like1[read]" lay-skin="primary" title="群组13">
+                            <input type="checkbox" name="like1[game]" lay-skin="primary" title="群组14" >
+                            <input type="checkbox" name="like1[write]" lay-skin="primary" title="群组15" >
+                            <input type="checkbox" name="like1[read]" lay-skin="primary" title="群组16">
+                            <input type="checkbox" name="like1[game]" lay-skin="primary" title="群组17" >
+                        </div>
+                    </div>
+                    <div class="layui-form-item layui-form-text">
+                        <label class="layui-form-label">平台:</label>
+                        <div class="layui-input-block">
+                            <input type="checkbox" name="message" lay-skin="primary" title="短信" >
+                            <input type="checkbox" name="excel" lay-skin="primary" title="邮件">
+                            <input type="checkbox" name="wechat" lay-skin="primary" title="微信" id="wechat" >
+                        </div>
+                    </div>
+                    <div class="layui-form-item" style="display: none;" id="wechatModules">
+                        <label class="layui-form-label">微信模板:</label>
                         <div class="layui-input-block" style="margin-left: 128px;">
-                            <textarea placeholder="" class="layui-textarea" ></textarea>
+                            <select name="quiz">
+                                <option value="">教师会议通知</option>
+                            </select>
                         </div>
                     </div>
                     <div class="layui-form-item">
@@ -83,6 +114,13 @@
                 console.log(res)
             }
         });
+        $('#wechat').next().on('click',function(){
+            if($(this).hasClass('layui-form-checked')){
+                $('#wechatModules').show();
+            }else{
+                $('#wechatModules').hide();
+            }
+        })
     });
 </script>
 </body>
