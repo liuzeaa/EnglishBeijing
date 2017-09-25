@@ -17,7 +17,7 @@
 <div>
     <div class="layui-tab layui-tab-card">
         <ul class="layui-tab-title">
-            <li class="layui-this" id="title">部门邮件群发</li>
+            <li class="layui-this" id="title">部门消息群发</li>
         </ul>
         <div class="layui-tab-content">
             <div class="layui-tab-item layui-show">
@@ -59,33 +59,55 @@
                             </div>
                         </div>
                     </div>
-                    <div class="layui-form-item layui-form-text">
-                        <label class="layui-form-label">已选用户:</label>
-                        <div class="layui-input-block" style="margin-left: 128px;">
-                            <textarea placeholder="" class="layui-textarea" ></textarea>
-                        </div>
-                    </div>
-                    <div class="layui-form-item layui-form-text">
-                        <label class="layui-form-label">可选用户:</label>
-                        <div class="layui-input-block" style="margin-left: 128px;border:1px solid #ccc;padding:0px 10px;">
-                            <input type="checkbox" name="like1[write]" lay-skin="primary" title="徐萍1" checked="">
-                            <input type="checkbox" name="like1[read]" lay-skin="primary" title="徐萍2">
-                            <input type="checkbox" name="like1[game]" lay-skin="primary" title="徐萍3" disabled="">
-                            <input type="checkbox" name="like1[write]" lay-skin="primary" title="徐萍1" checked="">
-                            <input type="checkbox" name="like1[read]" lay-skin="primary" title="徐萍2">
-                            <input type="checkbox" name="like1[game]" lay-skin="primary" title="徐萍3" disabled="">
-                            <input type="checkbox" name="like1[write]" lay-skin="primary" title="徐萍1" checked="">
-                            <input type="checkbox" name="like1[read]" lay-skin="primary" title="徐萍2">
-                            <input type="checkbox" name="like1[game]" lay-skin="primary" title="徐萍3" disabled="">
-                            <input type="checkbox" name="like1[write]" lay-skin="primary" title="徐萍1" checked="">
-                            <input type="checkbox" name="like1[read]" lay-skin="primary" title="徐萍2">
-                            <input type="checkbox" name="like1[game]" lay-skin="primary" title="徐萍3" disabled="">
-                        </div>
-                    </div>
+
                     <div class="layui-form-item layui-form-text">
                         <label class="layui-form-label">内容</label>
                         <div class="layui-input-block" style="margin-left: 128px;">
                             <textarea class="layui-textarea layui-hide" name="content" lay-verify="content" id="LAY_demo_editor" ></textarea>
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item layui-form-text">
+                        <label class="layui-form-label">已选部门:</label>
+                        <div class="layui-input-block" style="margin-left: 128px;border:1px solid #ccc;padding:0px 10px;">
+                            <input type="checkbox" name="like1[write]" lay-skin="primary" title="研发部1" checked="">
+                            <input type="checkbox" name="like1[read]" lay-skin="primary" title="研发部" checked="">
+                            <input type="checkbox" name="like1[game]" lay-skin="primary" title="研发部3" disabled="">
+                            <input type="checkbox" name="like1[write]" lay-skin="primary" title="研发部4" checked="">
+                            <input type="checkbox" name="like1[read]" lay-skin="primary" title="研发部5" checked="">
+                        </div>
+                    </div>
+                    <div class="layui-form-item layui-form-text">
+                        <label class="layui-form-label">未选部门:</label>
+                        <div class="layui-input-block" style="margin-left: 128px;border:1px solid #ccc;padding:0px 10px;">
+                            <input type="checkbox" name="like1[write]" lay-skin="primary" title="研发部6" >
+                            <input type="checkbox" name="like1[read]" lay-skin="primary" title="研发部7">
+                            <input type="checkbox" name="like1[game]" lay-skin="primary" title="研发部8" >
+                            <input type="checkbox" name="like1[write]" lay-skin="primary" title="研发部9" >
+                            <input type="checkbox" name="like1[read]" lay-skin="primary" title="研发部10">
+                            <input type="checkbox" name="like1[game]" lay-skin="primary" title="研发部11" >
+                            <input type="checkbox" name="like1[write]" lay-skin="primary" title="研发部12" >
+                            <input type="checkbox" name="like1[read]" lay-skin="primary" title="研发部13">
+                            <input type="checkbox" name="like1[game]" lay-skin="primary" title="研发部14" >
+                            <input type="checkbox" name="like1[write]" lay-skin="primary" title="研发部15" >
+                            <input type="checkbox" name="like1[read]" lay-skin="primary" title="研发部16">
+                            <input type="checkbox" name="like1[game]" lay-skin="primary" title="研发部17" >
+                        </div>
+                    </div>
+                    <div class="layui-form-item layui-form-text">
+                        <label class="layui-form-label">平台:</label>
+                        <div class="layui-input-block">
+                            <input type="checkbox" name="message" lay-skin="primary" title="短信" >
+                            <input type="checkbox" name="excel" lay-skin="primary" title="邮件">
+                            <input type="checkbox" name="wechat" lay-skin="primary" title="微信" id="wechat" >
+                        </div>
+                    </div>
+                    <div class="layui-form-item" style="display: none;" id="wechatModules">
+                        <label class="layui-form-label">微信模板:</label>
+                        <div class="layui-input-block" style="margin-left: 128px;">
+                            <select name="quiz">
+                                <option value="">教师会议通知</option>
+                            </select>
                         </div>
                     </div>
                     <div class="layui-form-item">
@@ -118,7 +140,13 @@
                 layedit.sync(editIndex);
             }
         });
-
+        $('#wechat').next().on('click',function(){
+            if($(this).hasClass('layui-form-checked')){
+                $('#wechatModules').show();
+            }else{
+                $('#wechatModules').hide();
+            }
+        })
     });
 </script>
 </body>
